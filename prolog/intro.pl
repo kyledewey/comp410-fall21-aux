@@ -12,5 +12,13 @@ isName(alice). % fact
 isName(bob).   % fact
 
 % procedure - someFact/1
-someFact(foo).
+% someFact(foo).
+someFact(_).
 
+areEqual(SomeVariable, SomeVariable).
+
+% = denotes unification
+% all variables initially are uninstantiated
+% unifications can instantiate variables to values
+% once a variable is instantiated, it can never
+% change
