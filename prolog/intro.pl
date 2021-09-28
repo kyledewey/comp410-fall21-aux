@@ -22,3 +22,15 @@ areEqual(SomeVariable, SomeVariable).
 % unifications can instantiate variables to values
 % once a variable is instantiated, it can never
 % change
+
+% Range is inclusive
+% MinEndOfRange, MaxEndOfRange, Integer
+isIntegerInRange(Min, Max, Integer) :-
+    Min =< Integer,
+    Integer =< Max.
+
+isGreaterThan(Num1, Num2) :- 
+   Num1 =< Num2.
+
+likes(alice, pizza).
+likes(bob, salad).
