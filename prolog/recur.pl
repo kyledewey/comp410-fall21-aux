@@ -18,6 +18,9 @@ f(Input, Output) :- % rule
     f(MinTwo, SecondCallOutput),
     Output is FirstCallOutput + SecondCallOutput.
 
+% b
+% b || false
+
 % myBetween: Low, High, Value
 % ?- myBetween(3, 5, X).
 %    X = 3;
