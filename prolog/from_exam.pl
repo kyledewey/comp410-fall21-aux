@@ -1,3 +1,16 @@
+% structure:
+% ?- X = foo(27, hello).
+% ?- foo(27, hello).
+% ?- X.
+% ... 1,000,000 ............ 10,000,000 years later
+% 
+%       >> 42 << (last release gives the question)
+%
+% homoiconic language
+%
+% int size = userInput();
+% int[] array = new int[size];
+
 isCompound(water).
 
 element(gold).
