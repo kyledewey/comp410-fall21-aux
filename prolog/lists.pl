@@ -6,10 +6,8 @@
 %
 % myAppend: InputList1, InputList2, OutputList
 myAppend(nil, OtherList, OtherList).
-myAppend(cons(Head, Tail), OtherList, ResultList) :-
-    myAppend(Tail, OtherList, IntermediateList),
-    ResultList = cons(Head, IntermediateList).
-
+myAppend(cons(Head, Tail), OtherList, cons(Head, IntermediateList)) :-
+    myAppend(Tail, OtherList, IntermediateList).
 
 someFact(1).
 someFact(2).
