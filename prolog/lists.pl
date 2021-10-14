@@ -16,17 +16,21 @@
 %         rest = myAppend(list1.tail, list2)
 %         return Cons(list1.head, rest)
 
+unify(X, X).
+
 myAppend(List1, List2, Result) :-
-    List1 = nil,
-    Result = List2.
+    unify(List1, nil),
+    unify(Result, List2).
 myAppend(List1, List2, Result) :-
-    List1 = cons(Head, Tail),
+    unify(List1, cons(Head, Tail)),
     myAppend(Tail, List2, Rest),
-    Result = cons(Head, Rest).
+    unify(Result, cons(Head, Rest)).
 
 
 
-
+%% myAppend(nil, Result, Result).
+%% myAppend(cons(Head, Tail), List2, cons(Head, Rest)) :-
+%%     myAppend(Tail, List2, Rest).
 
 
 
