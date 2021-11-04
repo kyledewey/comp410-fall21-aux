@@ -19,20 +19,21 @@ isBooleanExpression(or(E1, E2)) :-
     isBooleanExpression(E1),
     isBooleanExpression(E2).
 
+decBound(OldDepth, NewDepth) :-
+    OldDepth > 0,
+    NewDepth is OldDepth - 1.
+
 % boundedIsBooleanExpression: MaxDepth, Expression
 boundedIsBooleanExpression(_, true).
 boundedIsBooleanExpression(_, false).
 boundedIsBooleanExpression(MaxDepth, not(E)) :-
-    MaxDepth > 0,
-    NewDepth is MaxDepth - 1,
+    decBound(MaxDepth, NewDepth),
     boundedIsBooleanExpression(NewDepth, E).
 boundedIsBooleanExpression(MaxDepth, and(E1, E2)) :-
-    MaxDepth > 0,
-    NewDepth is MaxDepth - 1,
+    decBound(MaxDepth, NewDepth),
     boundedIsBooleanExpression(NewDepth, E1),
     boundedIsBooleanExpression(NewDepth, E2).
 boundedIsBooleanExpression(MaxDepth, or(E1, E2)) :-
-    MaxDepth > 0,
-    NewDepth is MaxDepth - 1,
+    decBound(MaxDepth, NewDepth),
     boundedIsBooleanExpression(NewDepth, E1),
     boundedIsBooleanExpression(NewDepth, E2).
