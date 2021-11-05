@@ -37,3 +37,12 @@ boundedIsBooleanExpression(MaxDepth, or(E1, E2)) :-
     decBound(MaxDepth, NewDepth),
     boundedIsBooleanExpression(NewDepth, E1),
     boundedIsBooleanExpression(NewDepth, E2).
+
+% if(condition, ifTrue, ifFalse)
+exp(_,true).
+exp(_,false).
+exp(Bound, if(E1,E2,E3)) :-
+    decBound(Bound, NewBound),
+    exp(NewBound,E1),
+    exp(NewBound,E2),
+    exp(NewBound,E3).
