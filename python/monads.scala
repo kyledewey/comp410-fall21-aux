@@ -34,3 +34,5 @@
 //
 // // mplus gives you OR
 // def mplus[A](m1: List[A], m2: List[A]): List[A] = m1.append(m2)
+
+// def and[A, B](m: Iterator[A], f: A => Iterator[B]): Iterator[B] = 
